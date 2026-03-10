@@ -1,0 +1,3 @@
+[submodule "oh-my-zsh/custom/plugins/zsh-fzf-history-search"]
+	path = oh-my-zsh/custom/plugins/zsh-fzf-history-search
+	url = git@github.com:joshskidmore/zsh-fzf-history-search.git
