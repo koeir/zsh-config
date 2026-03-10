@@ -9,6 +9,7 @@ alias f2b='sudo fail2ban-client'
 alias fcd='cd "$(find . -type d | fzf)"'
 alias so='source $HOME/.zshrc'
 alias grepv='grep -v grep | grep'
+alias fz='cd "$(find . -type d | fzf)"'
 
 # git aliases
 alias gitlog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all"
@@ -19,7 +20,7 @@ alias pacref='sudo pacman -Sy'
 alias pacsearch='pacman -Ss'
 alias pacinfo='pacman -Si'
 alias pacupg='sudo pacman -Syu'
-alias pacrem='sudo pacman -Ru'
+alias pacrem='sudo pacman -Rus'
 alias pacquery='pacman -Q'
 alias pacqinfo='pacman -Qi'
 
