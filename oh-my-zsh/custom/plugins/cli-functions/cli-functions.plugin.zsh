@@ -40,7 +40,7 @@ fzd() {
     if [ ! -z "$1" ]; then
         cd "$(find "$1" -type d | fzf --style full --no-preview)"
     else
-        cd "$(find . -type d | fzf)"
+        cd "$(find . -type d | fzf --style full --no-preview)"
     fi
 
     return 0
