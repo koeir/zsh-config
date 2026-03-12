@@ -9,6 +9,7 @@ fi
 
 cp ~/.zshrc{,.pre-koeir-config}
 cp ./zshrc ~/.zshrc
+cp -r ./misc ~/.misc
 
 if [[ $rsync_omz == "true" ]]; then
 	rsync -rv ./oh-my-zsh/* ~/.oh-my-zsh
