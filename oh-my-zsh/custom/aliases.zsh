@@ -10,7 +10,7 @@ alias fcd='cd "$(find . -type d | fzf)"'
 alias so='source $HOME/.zshrc'
 alias grepv='grep -v grep | grep'
 alias fzf="fzf --style full --preview '$HOME/.misc/fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
-alias fz='cd "$(find . -type d | fzf)"'
+alias fz='fzd'
 
 # git aliases
 alias gitlog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all"

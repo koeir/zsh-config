@@ -30,3 +30,18 @@ pathadd() {
 
     return 2
 }
+
+fzd() {
+    if ! command -v fzf &> /dev/null; then
+        echo "[$0] fzf is not installed."
+        return
+    fi
+
+    if [ ! -z "$1" ]; then
+        cd "$(find "$1" -type d | fzf)"
+    else
+        cd "$(find . -type d | fzf)"
+    fi
+
+    return 0
+}
