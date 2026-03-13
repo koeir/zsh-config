@@ -9,7 +9,6 @@ alias f2b='sudo fail2ban-client'
 alias fcd='cd "$(find . -type d | fzf)"'
 alias so='source $HOME/.zshrc'
 alias grepv='grep -v grep | grep'
-alias fzf="fzf --style full --preview '$HOME/.misc/fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
 alias fz='fzd'
 
 # git aliases
