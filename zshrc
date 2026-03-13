@@ -20,14 +20,14 @@ export LC_ALL=en_US.UTF-8
 
 # Login stdout
 ## Checks for any failed services
-systemctl --failed --no-pager
+# systemctl --failed --no-pager
 
 ## Tells battery life
-echo ""
-acpi -b
+# echo ""
+# acpi -b
 
 # bashtools
 bashtools="/usr/share/bashtools"
 if [ -d "$bashtools" ]; then
-    pathadd prepend "$bashtools"
+    pathadd append "$bashtools"
 fi
