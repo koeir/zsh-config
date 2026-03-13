@@ -1,3 +1,12 @@
 [submodule "oh-my-zsh/custom/plugins/zsh-fzf-history-search"]
 	path = oh-my-zsh/custom/plugins/zsh-fzf-history-search
 	url = git@github.com:joshskidmore/zsh-fzf-history-search.git
+[submodule "oh-my-zsh/custom/plugins/fzf-tab"]
+	path = oh-my-zsh/custom/plugins/fzf-tab
+	url = git@github.com:Aloxaf/fzf-tab.git
+[submodule "oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+	path = oh-my-zsh/custom/plugins/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+	path = oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
