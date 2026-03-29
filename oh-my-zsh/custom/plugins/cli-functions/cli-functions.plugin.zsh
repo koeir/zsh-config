@@ -45,3 +45,9 @@ fzd() {
 
     return 0
 }
+
+cls() {
+  printf "\033[H\033[1;1H"           # Move to top-left
+  printf "\033[0J"                    # Clear from cursor down
+  printf "\033[%s;1H" "$((LINES-1))"  # Move cursor to second-to-last line
+}
