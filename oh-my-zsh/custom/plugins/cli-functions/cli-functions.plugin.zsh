@@ -46,6 +46,26 @@ fzd() {
     return 0
 }
 
+vzf() {
+    file="$1"
+
+    # If no arg given, fzf
+    if [ -z "$1" ]; then
+        local file="$(fzf)"
+    else
+        file="$(find . -type f -name "*$file*" | head -n 1)"
+    fi
+
+    echo "[$0] $file"
+
+    if [ ! -f "$file" ]; then
+        echo "[$0] $file: No such file"
+    fi
+
+    nvim "$file"
+    return 0
+}
+
 cls() {
   printf "\033[H\033[1;1H"           # Move to top-left
   printf "\033[0J"                    # Clear from cursor down
