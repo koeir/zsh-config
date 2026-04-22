@@ -46,7 +46,7 @@ fzd() {
     return 0
 }
 
-vzf() {
+fzv() {
     file="$1"
 
     # If no arg given, fzf
@@ -56,13 +56,19 @@ vzf() {
         file="$(find . -type f -name "*$file*" | head -n 1)"
     fi
 
-    echo "[$0] $file"
+    if [ -z "$file" ]; then
+        echo "[$0] $1: No such file"
+        return 1
+    fi
 
     if [ ! -f "$file" ]; then
-        echo "[$0] $file: No such file"
+        echo "[$0] '$file': Not a file"
+        return 1
     fi
 
     nvim "$file"
+    echo "[$0] $file"
+
     return 0
 }
 
