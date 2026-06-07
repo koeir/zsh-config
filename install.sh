@@ -33,5 +33,5 @@ if [[ $rsync_omz -eq 1 ]]; then
     echo "./oh-my-zsh -> ~/.oh-my-zsh.bak"
     cp -r ${omzdir}{,.bak}
     echo "rsync -rv ./oh-my-zsh/* $omzdir"
-	rsync -rv ./oh-my-zsh/* $omzdir
+	rsync -r ./oh-my-zsh/* $omzdir
 fi
