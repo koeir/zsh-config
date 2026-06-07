@@ -1,5 +1,5 @@
 eval "$(zoxide init zsh)"
-eval "$(fzf --zsh)"
+source <(fzf --zsh)
 
 export PATH
 
