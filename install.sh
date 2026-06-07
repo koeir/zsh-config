@@ -1,10 +1,10 @@
 #!/bin/bash
 
-sync_omz=true
+rsync_omz=1
 
 if [ ! -f "/usr/bin/rsync" ]; then 
     echo "[$0] rsync is not installed. Unable to sync ./oh-my-zsh/ config"
-    sync_omz=false
+    rsync_omz=0
 fi
 
 echo "~/.zshrc -> ~/.zshrc{,.pre-koeir-config}"
@@ -25,7 +25,7 @@ echo "./config/fzf/koeir/* -> $fzfconfigdir"
 cp ./config/fzf/koeir/* $fzfconfigdir
 
 omzdir="$HOME/.oh-my-zsh"
-if [[ $rsync_omz == "true" ]]; then
+if [[ $rsync_omz -eq 1 ]]; then
     if [ ! -d "$omzdir" ]; then
         echo "${omzdir}: Directory not found"
     fi
