@@ -30,8 +30,11 @@ if [[ $rsync_omz -eq 1 ]]; then
         echo "${omzdir}: Directory not found"
     fi
 
-    echo "./oh-my-zsh -> ~/.oh-my-zsh.bak"
-    rsync -r ${omzdir}{,.bak}
+    echo "./oh-my-zsh -> ~/.oh-my-zsh.pre-koeir"
+    rsync -r ${omzdir}{,.pre-koeir} --delete
     echo "rsync -rv ./oh-my-zsh/* $omzdir"
 	rsync -r ./oh-my-zsh/* $omzdir
 fi
+
+echo ""
+echo "don't forget to source!"
