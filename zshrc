@@ -18,7 +18,6 @@ plugins=(
     zsh-fzf-history-search
     paccheck
     cli-functions
-    reminders
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -26,3 +25,5 @@ source $ZSH/oh-my-zsh.sh
 # Locale
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+command reminders
