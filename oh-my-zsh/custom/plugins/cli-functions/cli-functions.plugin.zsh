@@ -47,17 +47,21 @@ fzd() {
 }
 
 fzv() {
-    file="$1"
+    local file="$1"
 
     # If no arg given, fzf
     if [ -z "$1" ]; then
-        local file="$(fzf)"
+        file="$(fzf)"
     else
-        file="$(find . -type f -name "*$file*" | head -n 1)"
+        file="$(find . -type f -name "*$file*")"
+    fi
+
+    if [ "$(wc -l <<< "$file")" -gt 1 ]; then
+        file="$(fzf <<< "$file")"
     fi
 
     if [ -z "$file" ]; then
-        echo "[$0] $1: No such file"
+        echo "[$0] '$1': No such file"
         return 1
     fi
 
