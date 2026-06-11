@@ -1,18 +1,20 @@
 #!/bin/bash
 
 rsyncOmz=true
+omzdir="$HOME/.oh-my-zsh"
+fzfconfigdir="$HOME/.config/fzf/koeir"
+thisdir="$(dirname "$0")"
 
 if ! command -v rsync; then 
-    echo "[$0] rsync is not installed. Unable to sync ./oh-my-zsh/ config"
+    echo "[$0] rsync is not installed. Unable to sync "$thisdir"/oh-my-zsh/ config"
     rsyncOmz=false
 fi
 
 echo "~/.zshrc -> ~/.zshrc{,.pre-koeir-config}"
 echo "./zshrc -> ~/.zshrc"
 cp ~/.zshrc{,.pre-koeir-config}
-cp ./zshrc ~/.zshrc
+cp "$thisdir"/zshrc ~/.zshrc
 
-fzfconfigdir="$HOME/.config/fzf/koeir"
 if [ ! -d "$fzfconfigdir" ]; then
     echo "mkdir $fzfconfigdir"
     if ! mkdir -p $fzfconfigdir; then
@@ -22,7 +24,7 @@ if [ ! -d "$fzfconfigdir" ]; then
 fi
 
 echo "./config/fzf/koeir/* -> $fzfconfigdir"
-cp ./config/fzf/koeir/* $fzfconfigdir
+cp "$thisdir"/config/fzf/koeir/* $fzfconfigdir
 
 # backup omzdir first
 echo "./oh-my-zsh -> ~/.oh-my-zsh.pre-koeir"
@@ -38,14 +40,13 @@ else
     fi
 fi
 
-omzdir="$HOME/.oh-my-zsh"
 if $rsyncOmz; then
     if [ ! -d "$omzdir" ]; then
         echo "${omzdir}: Directory not found"
     fi
 
-    echo "rsync -rv ./oh-my-zsh/* $omzdir"
-	rsync -r ./oh-my-zsh/* $omzdir --delete
+    echo "rsync -rv "$thisdir"/oh-my-zsh/* $omzdir"
+	rsync -r "$thisdir"/oh-my-zsh/* "$omzdir" --delete
 fi
 
 echo ""
