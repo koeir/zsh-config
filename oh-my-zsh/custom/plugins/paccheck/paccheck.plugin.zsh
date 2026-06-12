@@ -1,7 +1,7 @@
 ## Checks if pacupg was ran over a week ago
-lastupg="$(grep pacupg $HISTFILE | grep -v grep | tail -n 1 | cut -d ':' -f2)"
-currentunixdate="$(date +%s)"
-lastupg_daysago=$(( (currentunixdate-lastupg) / 86400 ))
+local lastupg="$(grep pacupg $HISTFILE | grep -v grep | tail -n 1 | cut -d ':' -f2)"
+local currentunixdate="$(date +%s)"
+local lastupg_daysago=$(( (currentunixdate-lastupg) / 86400 ))
 if (( lastupg_daysago >= 7 )); then
     echo ""
     echo -e "\e[31m!! WARNING !!"
