@@ -1,8 +1,9 @@
-inoremap        jj <Esc>
+set         tabstop=4
+set         shiftwidth=4
 
-set             tabstop=4
-syntax          on
+inoremap    jj <Esc>
 
+syntax      on
 colorscheme retrobox
 
 augroup MyHighlights
