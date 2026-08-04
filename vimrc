@@ -1,5 +1,7 @@
 set         tabstop=4
 set         shiftwidth=4
+set         inccommand=nosplit
+set         number
 
 inoremap    jj <Esc>
 
