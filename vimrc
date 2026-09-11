@@ -7,8 +7,5 @@ inoremap    jj <Esc>
 syntax      on
 colorscheme retrobox
 
-augroup MyHighlights
-    autocmd!
-    autocmd ColorScheme * hi Normal ctermbg=NONE guibg=NONE
-    autocmd ColorScheme * hi NonText ctermbg=NONE guibg=NONE
-augroup END
+hi Normal ctermbg=NONE guibg=NONE
+hi NonText ctermbg=NONE guibg=NONE
