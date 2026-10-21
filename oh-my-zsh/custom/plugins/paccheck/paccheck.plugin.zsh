@@ -6,9 +6,13 @@ NC='\033[0m'
 RED='\033[31m'
 
 LOGFILE='/var/log/pacman.log'
-LAST_UPDATE="$(grep Syu /var/log/pacman.log | tail -n 1)"
+LAST_UPDATE="$(grep Syu "$LOGFILE" | tail -n 1)"
 
-LU_EPOCH="$(date -d "$ts" +%s)"
+# Convert datetime from log to EPOCH date  
+[[ $LAST_UPDATE =~ '^\[([^]]+)\]' ]] && 
+LU_EPOCH="$(echo "$match[1]" | xargs -I {} date -d '{}' +%s)"
+
+# Calculate difference between today and last update
 NOW_EPOCH="$(date +%s)"
 DIFF_DAYS="$(((NOW_EPOCH - LU_EPOCH)/86400))"
 
