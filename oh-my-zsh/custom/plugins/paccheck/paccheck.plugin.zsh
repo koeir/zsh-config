@@ -21,4 +21,4 @@ DIFF_DAYS="$(((NOW_EPOCH - LU_EPOCH)/86400))"
 echo -e "\
 ${RED}\
 !! WARNING !!
-Last update $DIFF_DAYS days ago.\n"
+Last update $DIFF_DAYS days ago.${NC}\n"
